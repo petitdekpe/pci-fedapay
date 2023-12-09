@@ -1,9 +1,9 @@
 <?php
 // Inclure le code de connexion à la base de données ici
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "fedapay";
+$servername = "localhost:3306";
+$username = "petitde1_petitde1";
+$password = "ahouan1003";
+$dbname = "petitde1_pci";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
