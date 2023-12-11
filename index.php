@@ -242,10 +242,6 @@
                 <input type="text" name="produit_transporte" id="produit_transporte" class="border-2 border-gray-300 p-2 w-full">
             </div>
 
-            <div class="mb-4">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Soumettre</button>
-            </div>
-
             <script
             src="https://cdn.fedapay.com/checkout.js?v=1.1.7"
             data-public-key="pk_sandbox_xCY2GQDcfEprGAFjWVZsSgGW"
