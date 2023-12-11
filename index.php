@@ -195,6 +195,14 @@
             </div>
 
             <div class="mb-4">
+                <label for="type_penalite" class="block text-gray-600 font-bold mb-2">Type de Pénalité :</label>
+                <select name="type_penalite" id="type_penalite" class="border-2 border-gray-300 p-2 w-full" required>
+                    <option value="sejour_7_jours">Pénalité de Séjour Camion pour 07 jours</option>
+                    <option value="sejour_8_jours">Pénalité de Séjour Camion à partir du 08ème jour</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
                 <label for="montant" class="block text-gray-600 font-bold mb-2">Montant :</label>
                 <input type="text" name="montant" id="montant" class="border-2 border-gray-300 p-2 w-full" value="10,000" disabled>
             </div>
