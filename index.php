@@ -205,8 +205,7 @@
 
             <div class="mb-4">
                 <label for="p_montant" class="block text-gray-600 font-bold mb-2">Montant :</label>
-                <input type="text" name="montant" id="p_montant" class="border-2 border-gray-300 p-2 w-full"
-                       value="10,000" disabled>
+                <input type="text" name="montant" id="p_montant" class="border-2 border-gray-300 p-2 w-full">
             </div>
 
             <div class="mb-4">
