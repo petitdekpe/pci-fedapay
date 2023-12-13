@@ -165,9 +165,7 @@
         </form>
 
         <!-- Formulaire 2 -->
-        <form id="form2" action="penalite.php" method="POST" style="display: none;">
-
-            <!-- ... (contenu du formulaire 2) -->
+        <!--form id="form2" action="penalite.php" method="POST" style="display: none;">
 
             <div class="mb-4">
                 <label for="p_nom" class="block text-gray-600 font-bold mb-2">Nom :</label>
@@ -254,7 +252,7 @@
             <div class='mb-4'>
                 <button id='pay-btn' type='submit'>Valider</button>
             </div>
-        </form>
+        </form-->
 
     </div>
 </div>
@@ -299,12 +297,12 @@
 
     document.getElementById('form1').addEventListener('submit', function (e) {
         let invoiceWidget = FedaPay.init({
-            public_key: 'pk_sandbox_xCY2GQDcfEprGAFjWVZsSgGW',
+            public_key: 'pk_live_TEG4J8ps_xgTt24nmiRZ5hb5',
             transaction: {
                 amount: parseInt(document.getElementById('f_montant').value),
                 description: 'Paiement de facture',
             },
-            environment: 'sandbox',
+            environment: 'live',
             customer: {
                 email: document.getElementById('f_email').value,
                 lastname: document.getElementById('f_nom').value,
@@ -342,12 +340,12 @@
 
     document.getElementById('form2').addEventListener('submit', function (e) {
         let invoiceWidget = FedaPay.init({
-            public_key: 'pk_sandbox_xCY2GQDcfEprGAFjWVZsSgGW',
+            public_key: 'pk_live_TEG4J8ps_xgTt24nmiRZ5hb5',
             transaction: {
                 amount: parseInt(document.getElementById('p_montant').value),
                 description: 'Paiement de facture',
             },
-            environment: 'sandbox',
+            environment: 'live',
             customer: {
                 email: document.getElementById('p_email').value,
                 lastname: document.getElementById('p_nom').value,
