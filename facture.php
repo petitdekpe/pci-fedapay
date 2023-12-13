@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $immatriculation_remorque = $_POST['immatriculation_remorque'];
         $immatriculation_tracteur = $_POST['immatriculation_tracteur'];
         $permis = $_POST['permis'];
-        $produit_transporté = $_POST['produit_transporté'];
+        $produit_transporte = $_POST['produit_transporte'];
 
         // Insérer les données dans la base de données (exemple)
         $stmt = $conn->prepare("INSERT INTO facture_table (nom, prenom, email, pays, telephone, montant, entreprise, ifu, immatriculation_remorque, immatriculation_tracteur, permis, produit_transporté) VALUES (:nom, :prenom, :email, :pays, :telephone, :montant, :entreprise, :ifu, :immatriculation_remorque, :immatriculation_tracteur, :permis, :produit_transporté)");
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':immatriculation_remorque', $immatriculation_remorque);
         $stmt->bindParam(':immatriculation_tracteur', $immatriculation_tracteur);
         $stmt->bindParam(':permis', $permis);
-        $stmt->bindParam(':produit_transporté', $produit_transporté);
+        $stmt->bindParam(':produit_transporte', $produit_transporte);
 
         // Exécuter la requête
         $stmt->execute();
