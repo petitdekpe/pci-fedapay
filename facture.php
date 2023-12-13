@@ -1,7 +1,7 @@
 <?php
 // Inclure le code de connexion à la base de données ici
 $servername = "localhost:3306";
-$username = "petitde1_petitde1";
+$username = "petitde1_pci";
 $password = "ahouan1003";
 $dbname = "petitde1_pci_live";
 
