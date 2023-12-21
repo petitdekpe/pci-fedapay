@@ -81,7 +81,7 @@
             <label for="formSelector" class="block text-gray-600 font-bold mb-2">Choisissez votre opération:</label>
             <select id="formSelector" class="border-2 border-gray-300 p-2 w-full" onchange="toggleForm()">
                 <option value="form1">Payer Facture</option>
-                <option value="form2">Payer Pénalités</option>
+                <!--option value="form2">Payer Pénalités</option-->
             </select>
         </div>
 
