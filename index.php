@@ -79,7 +79,7 @@
 
         <div class="mb-4">
             <label for="formSelector" class="block text-gray-600 font-bold mb-2">Choisissez votre opération:</label>
-            <select id="formSelector" class="border-2 border-gray-300 p-2 w-full" onchange="toggleForm()">
+            <select id="formSelector" name="formSelector"  class="border-2 border-gray-300 p-2 w-full" onchange="toggleForm()">
                 <option value="form1">Payer Facture</option>
                 <!--option value="form2">Payer Pénalités</option-->
             </select>
@@ -118,7 +118,7 @@
 
             <div class="mb-4">
                 <label for="f_montant" class="block text-gray-600 font-bold mb-2">Montant :</label>
-                <input type="text" name="montant" id="f_montant" class="border-2 border-gray-300 p-2 w-full" required>
+                <input type="number" name="montant" id="f_montant" class="border-2 border-gray-300 p-2 w-full" required>
             </div>
 
             <div class="mb-4">
@@ -128,7 +128,7 @@
 
             <div class="mb-4">
                 <label for="f_ifu" class="block text-gray-600 font-bold mb-2">Ifu de l'Entreprise :</label>
-                <input type="text" name="ifu" id="f_ifu" class="border-2 border-gray-300 p-2 w-full" pattern="[0-9]{13}"
+                <input type="number" name="ifu" id="f_ifu" class="border-2 border-gray-300 p-2 w-full" pattern="[0-9]{13}"
                        title="Le numéro IFU doit contenir exactement 13 chiffres" required>
                 <small class="text-gray-500">Format : 13 chiffres</small>
             </div>
@@ -295,11 +295,38 @@
         .catch(error => console.error('Erreur lors du chargement des pays', error));
 
     document.getElementById('form1').addEventListener('submit', function (e) {
+
+        /*custom_metadata: {
+                    nom: document.querySelector('#f_nom').value,
+                    prenom: document.querySelector('#f_prenom').value,
+                    email: document.querySelector('#f_email').value,
+                    pay: document.querySelector('#f_pays').value,
+                    telephone: document.querySelector('#f_telephone').value,
+                    montant: document.querySelector('#f_montant').value,
+                    entreprise: document.querySelector('#f_entreprise').value,
+                    ifu: document.querySelector('#f_ifu').value,
+                    immatriculation_remorque: document.querySelector('#f_immatriculation_remorque').value,
+                    immatriculation_tracteur: document.querySelector('#f_immatriculation_tracteur').value,
+                    permis: document.querySelector('#f_permis').value,
+                    produit_transporte: document.querySelector('#f_produit_transporte').value,
+                }*/
         let invoiceWidget = FedaPay.init({
             public_key: 'pk_live_TEG4J8ps_xgTt24nmiRZ5hb5',
             transaction: {
                 amount: parseInt(document.getElementById('f_montant').value),
                 description: 'Paiement de facture',
+                custom_metadata: {
+                    nom: document.querySelector('#f_nom').value,
+                    prenom: document.querySelector('#f_prenom').value,
+                    email: document.querySelector('#f_email').value,
+                    telephone: document.querySelector('#f_telephone').value,
+                    entreprise: document.querySelector('#f_entreprise').value,
+                    ifu: document.querySelector('#f_ifu').value,
+                    immatriculation_remorque: document.querySelector('#f_immatriculation_remorque').value,
+                    immatriculation_tracteur: document.querySelector('#f_immatriculation_tracteur').value,
+                    permis: document.querySelector('#f_permis').value,
+                    produit_transporte: document.querySelector('#f_produit_transporte').value
+                }
             },
             environment: 'live',
             customer: {
@@ -342,7 +369,7 @@
             public_key: 'pk_live_TEG4J8ps_xgTt24nmiRZ5hb5',
             transaction: {
                 amount: parseInt(document.getElementById('p_montant').value),
-                description: 'Paiement de facture',
+                description: 'Paiement de facture'
             },
             environment: 'live',
             customer: {

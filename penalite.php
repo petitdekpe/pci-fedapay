@@ -5,6 +5,8 @@ $username = "petitde1_pci";
 $password = "ahouan1003";
 $dbname = "petitde1_pci_live";
 
+
+
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

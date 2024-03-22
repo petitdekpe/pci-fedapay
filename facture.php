@@ -8,15 +8,15 @@ $dbname = "petitde1_pci_live";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    header("Location: index.php");
-    exit();
+    //header("Location: index.php");
+    //exit();
 } catch (PDOException $e) {
     echo "Erreur de connexion à la base de données : " . $e->getMessage();
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Vérifier si le formulaire 1 a été soumis
-    if (isset($_POST['formSelector']) && $_POST['formSelector'] == 'form1') {
+    //if (isset($_POST['formSelector']) && $_POST['formSelector'] == 'form1') {
         // Récupérer les données du formulaire 1
         $nom = $_POST['nom'];
         $prenom = $_POST['prenom'];
@@ -32,7 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $produit_transporte = $_POST['produit_transporte'];
 
         // Insérer les données dans la base de données (exemple)
-        $stmt = $conn->prepare("INSERT INTO facture_table (nom, prenom, email, pays, telephone, montant, entreprise, ifu, immatriculation_remorque, immatriculation_tracteur, permis, produit_transporté) VALUES (:nom, :prenom, :email, :pays, :telephone, :montant, :entreprise, :ifu, :immatriculation_remorque, :immatriculation_tracteur, :permis, :produit_transporté)");
+        $stmt = $conn->prepare("INSERT INTO facture (nom, prenom, email, pays, telephone, montant, entreprise, ifu, immatriculation_remorque, immatriculation_tracteur, permis, produit_transporte) 
+        VALUES (:nom, :prenom, :email, :pays, :telephone, :montant, :entreprise, :ifu, :immatriculation_remorque, :immatriculation_tracteur, :permis, :produit_transporte)");
+        
         $stmt->bindParam(':nom', $nom);
         $stmt->bindParam(':prenom', $prenom);
         $stmt->bindParam(':email', $email);
@@ -52,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Rediriger ou effectuer d'autres actions après l'insertion
         header("Location: index.php");
         exit();
-    }
+    //}
 }
 ?>
 
